@@ -11,6 +11,17 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/testing', function () {
+  echo "This is testing";
+});
+
+Auth::routes(['register'=> false]);
+
+Route::get('/home', 'HomeController@index')->name('home');
